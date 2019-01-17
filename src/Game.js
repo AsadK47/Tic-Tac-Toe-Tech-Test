@@ -1,7 +1,7 @@
 "use strict";
 
 function Game() {
-  this.current_player = "first";
+  this.current_player = "X";
   this.grid = [[null, null, null], [null, null, null], [null, null, null]];
 }
 
@@ -10,10 +10,10 @@ Game.prototype.currentPlayer = function() {
 };
 
 Game.prototype.switchTurn = function() {
-  if (this.currentPlayer() === "first") {
-    this.current_player = "second";
-  } else if (this.currentPlayer() === "second") {
-    this.current_player = "first";
+  if (this.currentPlayer() === "X") {
+    this.current_player = "O";
+  } else if (this.currentPlayer() === "O") {
+    this.current_player = "X";
   }
 };
 

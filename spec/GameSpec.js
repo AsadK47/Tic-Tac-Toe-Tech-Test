@@ -8,17 +8,26 @@ describe("Game", function() {
   });
 
   it("has player 1 start the game", function() {
-    expect(game.currentPlayer()).toEqual("first");
+    expect(game.currentPlayer()).toEqual("X");
   });
 
   it("switches the players turn", function() {
     game.switchTurn();
-    expect(game.currentPlayer()).toEqual("second");
+    expect(game.currentPlayer()).toEqual("O");
   });
 
-  it("expects grid to be an array of arrays", function() {
+  it("expects grid to initalise as an array of arrays", function() {
     expect(game.showGrid()).toEqual([
       [null, null, null],
+      [null, null, null],
+      [null, null, null]
+    ]);
+  });
+
+  it("expects player move to be stored in the grid array", function() {
+    game.playerMove("X", [0, 0]);
+    expect(game.showGrid()).toEqual([
+      ["X", null, null],
       [null, null, null],
       [null, null, null]
     ]);
