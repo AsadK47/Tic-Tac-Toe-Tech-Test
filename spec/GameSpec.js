@@ -10,4 +10,9 @@ describe("Game", function() {
   it("has player 1 start the game", function() {
     expect(game.currentPlayer()).toEqual("first");
   });
+
+  it("switches the players turn", function() {
+    game.switchTurn();
+    expect(game.currentPlayer()).toEqual("second");
+  });
 });
