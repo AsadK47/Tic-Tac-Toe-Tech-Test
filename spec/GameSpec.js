@@ -32,4 +32,9 @@ describe("Game", function() {
       [null, null, null]
     ]);
   });
+
+  it("switches turns after a players turn", function() {
+    game.playerMove([0], [0], "X");
+    expect(game.currentPlayer()).toEqual("O");
+  });
 });

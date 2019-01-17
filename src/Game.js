@@ -23,4 +23,5 @@ Game.prototype.showGrid = function() {
 
 Game.prototype.playerMove = function(move, move2, player) {
   this.grid[move][move2] = player;
+  this.switchTurn();
 };
