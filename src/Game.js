@@ -2,6 +2,7 @@
 
 function Game() {
   this.current_player = "first";
+  this.grid = [[null, null, null], [null, null, null], [null, null, null]];
 }
 
 Game.prototype.currentPlayer = function() {
@@ -14,4 +15,8 @@ Game.prototype.switchTurn = function() {
   } else if (this.currentPlayer() === "second") {
     this.current_player = "first";
   }
+};
+
+Game.prototype.showGrid = function() {
+  return this.grid;
 };
