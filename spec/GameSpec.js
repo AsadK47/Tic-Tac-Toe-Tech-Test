@@ -15,4 +15,12 @@ describe("Game", function() {
     game.switchTurn();
     expect(game.currentPlayer()).toEqual("second");
   });
+
+  it("expects grid to be an array of arrays", function() {
+    expect(game.showGrid()).toEqual([
+      [null, null, null],
+      [null, null, null],
+      [null, null, null]
+    ]);
+  });
 });
