@@ -9,9 +9,9 @@ Game.prototype.currentPlayer = function() {
 };
 
 Game.prototype.switchTurn = function() {
-  if (this.current_player === "first") {
+  if (this.currentPlayer() === "first") {
     this.current_player = "second";
-  } else if (this.current_player === "second") {
+  } else if (this.currentPlayer() === "second") {
     this.current_player = "first";
   }
 };
