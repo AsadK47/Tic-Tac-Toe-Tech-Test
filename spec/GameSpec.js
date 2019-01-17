@@ -25,7 +25,7 @@ describe("Game", function() {
   });
 
   it("expects player move to be stored in the grid array", function() {
-    game.playerMove("X", [0, 0]);
+    game.playerMove([0], [0], "X");
     expect(game.showGrid()).toEqual([
       ["X", null, null],
       [null, null, null],

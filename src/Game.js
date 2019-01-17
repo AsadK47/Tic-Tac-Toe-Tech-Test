@@ -20,3 +20,7 @@ Game.prototype.switchTurn = function() {
 Game.prototype.showGrid = function() {
   return this.grid;
 };
+
+Game.prototype.playerMove = function(move, move2, player) {
+  this.grid[move][move2] = player;
+};
