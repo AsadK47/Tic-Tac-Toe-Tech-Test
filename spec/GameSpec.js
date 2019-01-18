@@ -38,5 +38,8 @@ describe("Game", function() {
     expect(game.currentPlayer()).toEqual("O");
   });
 
-  // it("finishes the game", function() {});
+  it("increases the move counter", function() {
+    game.playerMove([0], [0]);
+    expect(game.moveCounter()).toEqual(1);
+  });
 });

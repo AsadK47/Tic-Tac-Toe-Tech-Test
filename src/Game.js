@@ -3,6 +3,7 @@
 function Game() {
   this.current_player = "X";
   this.grid = [[null, null, null], [null, null, null], [null, null, null]];
+  this.move_counter = 0;
 }
 
 Game.prototype.currentPlayer = function() {
@@ -23,5 +24,10 @@ Game.prototype.showGrid = function() {
 
 Game.prototype.playerMove = function(row, column) {
   this.grid[row][column] = this.currentPlayer();
+  this.move_counter++;
   this.switchTurn();
+};
+
+Game.prototype.moveCounter = function() {
+  return this.move_counter;
 };
