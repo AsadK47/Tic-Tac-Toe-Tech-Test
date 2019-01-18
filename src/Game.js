@@ -33,8 +33,12 @@ Game.prototype.moveCounter = function() {
 };
 
 Game.prototype.checkWinner = function() {
-  if ((this.grid[0][0] && this.grid[0][1] && this.grid[0][2] === "X") || "O") {
-    this.switchTurn();
-    return "Player " + this.current_player + " Won!";
+  for(var i = 0; i < this.grid.length; i++) {
+    if (this.grid[i][0] != null && this.grid[i][0] === (this.grid[i][1] && this.grid[i][2])) {
+      this.switchTurn();
+      return "Player " + this.current_player + " Won!";
+    } else {
+      return "The is game is still running!"
+    }
   }
 };
