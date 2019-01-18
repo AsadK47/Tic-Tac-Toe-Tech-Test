@@ -39,7 +39,13 @@ Game.prototype.checkWinner = function() {
       return "Player " + this.current_player + " Won!";
     } else if (this.grid[0][i] != null && this.grid[0][i] === (this.grid[1][i] && this.grid[2][i])) {
       this.switchTurn();
-      return "Player " + this.current_player + " Won!"; 
+      return "Player " + this.current_player + " Won!";
+    } else if (this.grid[0][0] != null && this.grid[0][0] === (this.grid[1][1] && this.grid[2][2])) {
+      this.switchTurn();
+      return "Player " + this.current_player + " Won!";
+    } else if (this.grid[2][0] != null && this.grid[2][0] === (this.grid[1][1] && this.grid[0][2])) {
+      this.switchTurn();
+      return "Player " + this.current_player + " Won!";
     }
   }
 };
