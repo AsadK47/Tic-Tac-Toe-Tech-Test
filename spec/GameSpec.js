@@ -52,5 +52,14 @@ describe("Game", function() {
       game.playerMove([0], [2]); // X
       expect(game.checkWinner()).toEqual("Player X Won!");
     });
+
+    it("allows a player to win by capturing all columns", function() {
+      game.playerMove([0], [0]);
+      game.playerMove([0], [1]);
+      game.playerMove([1], [0]);
+      game.playerMove([0], [2]);
+      game.playerMove([2], [0]);
+      expect(game.checkWinner()).toEqual("Player X Won!");
+    });
   });
 });

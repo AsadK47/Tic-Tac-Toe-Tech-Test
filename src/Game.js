@@ -37,8 +37,9 @@ Game.prototype.checkWinner = function() {
     if (this.grid[i][0] != null && this.grid[i][0] === (this.grid[i][1] && this.grid[i][2])) {
       this.switchTurn();
       return "Player " + this.current_player + " Won!";
-    } else {
-      return "The is game is still running!"
+    } else if (this.grid[0][i] != null && this.grid[0][i] === (this.grid[1][i] && this.grid[2][i])) {
+      this.switchTurn();
+      return "Player " + this.current_player + " Won!"; 
     }
   }
 };
