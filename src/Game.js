@@ -31,3 +31,10 @@ Game.prototype.playerMove = function(row, column) {
 Game.prototype.moveCounter = function() {
   return this.move_counter;
 };
+
+Game.prototype.checkWinner = function() {
+  if ((this.grid[0][0] && this.grid[0][1] && this.grid[0][2] === "X") || "O") {
+    this.switchTurn();
+    return "Player " + this.current_player + " Won!";
+  }
+};

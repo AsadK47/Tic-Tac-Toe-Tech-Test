@@ -42,4 +42,15 @@ describe("Game", function() {
     game.playerMove([0], [0]);
     expect(game.moveCounter()).toEqual(1);
   });
+
+  describe("Win conditions", function() {
+    it("allows a player to win by capturing all rows", function() {
+      game.playerMove([0], [0]); // X
+      game.playerMove([1], [0]);
+      game.playerMove([0], [1]); // X
+      game.playerMove([1], [1]);
+      game.playerMove([0], [2]); // X
+      expect(game.checkWinner()).toEqual("Player X Won!");
+    });
+  });
 });
