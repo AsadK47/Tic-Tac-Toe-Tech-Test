@@ -25,7 +25,7 @@ describe("Game", function() {
   });
 
   it("expects player move to be stored in the grid array", function() {
-    game.playerMove([0], [0], "X");
+    game.playerMove([0], [0]);
     expect(game.showGrid()).toEqual([
       ["X", null, null],
       [null, null, null],
@@ -34,7 +34,9 @@ describe("Game", function() {
   });
 
   it("switches turns after a players turn", function() {
-    game.playerMove([0], [0], "X");
+    game.playerMove([0], [0]);
     expect(game.currentPlayer()).toEqual("O");
   });
+
+  // it("finishes the game", function() {});
 });

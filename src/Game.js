@@ -21,7 +21,7 @@ Game.prototype.showGrid = function() {
   return this.grid;
 };
 
-Game.prototype.playerMove = function(row, column, player) {
-  this.grid[row][column] = player;
+Game.prototype.playerMove = function(row, column) {
+  this.grid[row][column] = this.currentPlayer();
   this.switchTurn();
 };
