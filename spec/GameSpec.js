@@ -43,7 +43,7 @@ describe("Game", function() {
     expect(game.moveCounter()).toEqual(1);
   });
 
-  describe("Win/Draw conditions", function() {
+  describe("Win conditions", function() {
     it("allows a player to win by capturing all rows", function() {
       game.playerMove([0], [0]); // X
       game.playerMove([1], [0]);
@@ -79,10 +79,20 @@ describe("Game", function() {
       game.playerMove([2], [2]); // X
       expect(game.showWinner()).toEqual("Player X Won!")
     });
+  });
 
-    // it("allows a player to draw", function() {
-    //   game.moveCounter() === 9
-    //   expect(game.checkWinner()).toEqual("It's a draw!")
-    // });
+  describe("Draw condition", function() {
+    it("allows a player to draw after 9 moves", function() {
+      game.move_counter++;
+      game.move_counter++;
+      game.move_counter++;
+      game.move_counter++;
+      game.move_counter++;
+      game.move_counter++;
+      game.move_counter++;
+      game.move_counter++;
+      game.move_counter++;
+      expect(game.checkDraw()).toEqual("It's a draw!")
+    });
   });
 });

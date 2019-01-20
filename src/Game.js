@@ -55,5 +55,13 @@ Game.prototype.checkWinner = function() {
 Game.prototype.showWinner = function() {
   if (this.checkWinner() === true) {
     return "Player " + this.current_player + " Won!";
-  } 
+  }
+};
+
+Game.prototype.checkDraw = function() {
+  if (this.moveCounter() === 9) {
+    return "It's a draw!"
+  } else {
+    return null
+  }
 };
