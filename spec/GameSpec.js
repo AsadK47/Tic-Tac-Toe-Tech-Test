@@ -43,14 +43,14 @@ describe("Game", function() {
     expect(game.moveCounter()).toEqual(1);
   });
 
-  describe("Win conditions", function() {
+  describe("Win/Draw conditions", function() {
     it("allows a player to win by capturing all rows", function() {
       game.playerMove([0], [0]); // X
       game.playerMove([1], [0]);
       game.playerMove([0], [1]); // X
       game.playerMove([1], [1]);
       game.playerMove([0], [2]); // X
-      expect(game.checkWinner()).toEqual("Player X Won!");
+      expect(game.checkWinner()).toEqual(true);
     });
 
     it("allows a player to win by capturing all columns", function() {
@@ -59,7 +59,7 @@ describe("Game", function() {
       game.playerMove([1], [0]); // X
       game.playerMove([0], [2]);
       game.playerMove([2], [0]); // X
-      expect(game.checkWinner()).toEqual("Player X Won!");
+      expect(game.checkWinner()).toEqual(true);
     });
 
     it("allows a player to win diagonally", function() {
@@ -68,7 +68,21 @@ describe("Game", function() {
       game.playerMove([1], [1]); // X
       game.playerMove([0], [2]);
       game.playerMove([2], [2]); // X
-      expect(game.checkWinner()).toEqual("Player X Won!")
+      expect(game.checkWinner()).toEqual(true)
     });
+
+    it("returns the winners name when a player has won", function() {
+      game.playerMove([0], [0]); // X
+      game.playerMove([0], [1]);
+      game.playerMove([1], [1]); // X
+      game.playerMove([0], [2]);
+      game.playerMove([2], [2]); // X
+      expect(game.showWinner()).toEqual("Player X Won!")
+    });
+
+    // it("allows a player to draw", function() {
+    //   game.moveCounter() === 9
+    //   expect(game.checkWinner()).toEqual("It's a draw!")
+    // });
   });
 });
