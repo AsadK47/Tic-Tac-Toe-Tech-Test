@@ -71,7 +71,25 @@ describe("Game", function() {
       expect(game.checkWinner()).toEqual(true)
     });
 
-    it("returns the winners name when a player has won", function() {
+    it("returns the winners name when a player has won horizontally", function() {
+      game.playerMove([0], [0]); // X
+      game.playerMove([1], [0]);
+      game.playerMove([0], [1]); // X
+      game.playerMove([1], [1]);
+      game.playerMove([0], [2]); // X
+      expect(game.showWinner()).toEqual("Player X Won!");
+    });
+
+    it("returns the winners name when a player has won vertically", function() {
+      game.playerMove([0], [0]); // X
+      game.playerMove([0], [1]);
+      game.playerMove([1], [0]); // X
+      game.playerMove([0], [2]);
+      game.playerMove([2], [0]); // X
+      expect(game.showWinner()).toEqual("Player X Won!");
+    });
+
+    it("returns the winners name when a player has won diagonally", function() {
       game.playerMove([0], [0]); // X
       game.playerMove([0], [1]);
       game.playerMove([1], [1]); // X
